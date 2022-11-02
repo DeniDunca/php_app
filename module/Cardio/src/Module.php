@@ -27,7 +27,7 @@ class Module implements ConfigProviderInterface
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new Model\User());
                     return new TableGateway('Users', $dbAdapter, null, $resultSetPrototype);
-                }
+                },
             ],
         ];
     }

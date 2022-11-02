@@ -64,15 +64,15 @@ return[
                         'id'     => '[0-9]+',
                     ],
                     'defaults' => [
-                        'controller' => Controller\AuthController::class,
+                        'controller' => Controller\UserController::class,
                         'action'     => 'index',
                     ],
                 ],
             ],
-            'patients' => [
+            'patient' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route' => '/patients[/:action[/:id]]',
+                    'route' => '/patient[/:action[/:id]]',
                     'constraints' => [
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
@@ -91,7 +91,7 @@ return[
             'login'=>__DIR__ . '/../view',
             'signup'=>__DIR__ . '/../view',
             'welcome'=>__DIR__ . '/../view',
-            'patients'=>__DIR__ . '/../view',
+            'patient'=>__DIR__ . '/../view',
         ],
     ],
 ];

@@ -76,7 +76,7 @@ return [
             ],
             [
                 'label'=>'Patients',
-                'route'=>'patients',
+                'route'=>'patient',
             ],
         ],
     ],

@@ -8,11 +8,9 @@ use Laminas\View\Model\ViewModel;
 
 class LoginController extends AbstractActionController{
 
-    private $adapter;
     private $userTable;
 
-    public function __construct(Adapter $adapter, UserTable $userTable){
-        $this->adapter = $adapter;
+    public function __construct( UserTable $userTable){
         $this->userTable = $userTable;
     }
 

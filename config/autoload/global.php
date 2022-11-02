@@ -18,6 +18,6 @@ return [
         'database' => 'eCabCardio',
         'username' => 'root',
         'password' => 'password',
-        'host'     => '172.18.0.2',
+        'host'     => '172.18.0.1',
     ]
 ];

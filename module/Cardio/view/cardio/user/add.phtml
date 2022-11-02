@@ -1,0 +1,124 @@
+<?php
+$title = 'Sign up';
+$this->headTitle($title);
+?>
+    <h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+// This provides a default CSS class and placeholder text for the title element:
+$form = $this->form;
+$form->setAttribute('action',$this->url('signup'));
+$form->prepare();
+
+$username = $form->get('username');
+$username->setAttribute('class', 'form-control');
+$username->setAttribute('placeholder', 'Username');
+
+// This provides a default CSS class and placeholder text for the artist element:
+$password = $form->get('password');
+$password->setAttribute('class', 'form-control');
+$password->setAttribute('placeholder', 'Password');
+
+// This provides a default CSS class and placeholder text for the artist element:
+$firstname = $form->get('firstname');
+$firstname->setAttribute('class', 'form-control');
+$firstname->setAttribute('placeholder', 'Firstname');
+
+// This provides a default CSS class and placeholder text for the artist element:
+$lastname = $form->get('lastname');
+$lastname->setAttribute('class', 'form-control');
+$lastname->setAttribute('placeholder', 'Lastname');
+
+// This provides a default CSS class and placeholder text for the artist element:
+$admin = $form->get('admin');
+$admin->setAttribute('class', 'form-control');
+$admin->setAttribute('placeholder', 'Admin');
+
+// This provides a default CSS class and placeholder text for the artist element:
+$clinic = $form->get('id_clinic');
+$clinic->setAttribute('class', 'form-control');
+$clinic->setAttribute('placeholder', 'Clinic');
+
+// This provides CSS classes for the submit button:
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+
+echo $this->form()->openTag($form);
+?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 shadow-sm">
+                <h3 class="mb-3 pt-2 text-md-center">
+                    <?= $this->escapeHtml($this->translate('Create a new Account')); ?>
+                </h3>
+                <?= $this->form()->openTag($form); ?>
+                <span class="form-text text-muted pb-2">
+                    <?= sprintf(
+                        $this->translate('Already have an account? %sLogin here%s.'),
+                        '<a href="login">', '</a>'
+                    ); ?>
+                </span>
+
+                <div class="mb-3">
+                    <?= $this->formLabel($form->get('username')); ?>
+                    <div class="form-group">
+                        <?= $this->formText($form->get('username')); ?>
+                    </div>
+                    <div class="text-danger">
+                        <?= $this->formElementErrors($form->get('username')); ?>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <?= $this->formLabel($form->get('password')); ?>
+                    <div class="form-group">
+                        <?= $this->formText($form->get('password')); ?>
+                    </div>
+                    <div class="text-danger">
+                        <?= $this->formElementErrors($form->get('password')); ?>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <?= $this->formLabel($form->get('firstname')); ?>
+                    <div class="form-group">
+                        <?= $this->formText($form->get('firstname')); ?>
+                    </div>
+                    <div class="text-danger">
+                        <?= $this->formElementErrors($form->get('firstname')); ?>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <?= $this->formLabel($form->get('lastname')); ?>
+                    <div class="form-group">
+                        <?= $this->formText($form->get('lastname')); ?>
+                    </div>
+                    <div class="text-danger">
+                        <?= $this->formElementErrors($form->get('lastname')); ?>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <?= $this->formLabel($form->get('admin')); ?>
+                    <div class="form-group">
+                        <?= $this->formText($form->get('admin')); ?>
+                    </div>
+                    <div class="text-danger">
+                        <?= $this->formElementErrors($form->get('admin')); ?>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <?= $this->formLabel($form->get('id_clinic')); ?>
+                    <div class="form-group">
+                        <?= $this->formText($form->get('id_clinic')); ?>
+                    </div>
+                    <div class="text-danger">
+                        <?= $this->formElementErrors($form->get('id_clinic')); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();

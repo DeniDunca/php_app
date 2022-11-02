@@ -1,0 +1,40 @@
+<?php // in module/Album/view/album/album/index.phtml:
+$title = 'My users';
+$this->headTitle($title);
+?>
+    <h1><?= $this->escapeHtml($title); ?></h1>
+    <table class="table">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Admin</th>
+            <th>Id_clinic</th>
+            <th>&nbsp;</th>
+        </tr>
+        <?php foreach ($this->paginator as $user) :?>
+            <tr>
+                <td><?= $this->escapeHtml($user->username) ?></td>
+                <td><?= $this->escapeHtml($user->password) ?></td>
+                <td><?= $this->escapeHtml($user->firstname) ?></td>
+                <td><?= $this->escapeHtml($user->lastname) ?></td>
+                <td><?= $this->escapeHtml($user->admin) ?></td>
+                <td><?= $this->escapeHtml($user->id_clinic) ?></td>
+                <td>
+                    <a href="<?= $this->url('user', ['action' => 'edit', 'id' => $user->id]) ?>">Edit</a>
+                    <a href="<?= $this->url('user', ['action' => 'delete', 'id' => $user->id]) ?>">Delete</a>
+                </td>
+            </tr>
+        <?php endforeach;?>
+    </table>
+<?= $this->paginationControl(
+// The paginator object:
+    $this->paginator,
+    // The scrolling style:
+    'sliding',
+    // The partial to use to render the control:
+    'partial/paginator',
+    // The route to link to when a user clicks a control link:
+    ['route' => 'user']
+) ?>

@@ -13,6 +13,7 @@ $this->headTitle($title);
             <th>Id_clinic</th>
             <th>&nbsp;</th>
         </tr>
+
         <?php foreach ($this->paginator as $user) :?>
             <tr>
                 <td><?= $this->escapeHtml($user->username) ?></td>
